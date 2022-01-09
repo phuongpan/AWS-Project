@@ -29,4 +29,34 @@ function fadeOut(){
   setInterval(loader, 3000);
 }
 
+function show()
+{
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var number = document.getElementById("number").value;
+  var foodname = document.getElementById("foodname").value;
+  var api = "URL"
+
+  var params = {
+    "name": name,
+    "email": email,
+    "number": number
+  }
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200)
+    {
+      alert(xhttp.responseText);
+    }
+  };
+  xhttp.open("POST", api, false);
+  var a=xhttp.send(JSON.stringify(params));
+  document.getElementById("name").value = '';
+  document.getElementById("email").value = '';
+  document.getElementById("number").value = '';
+  document.getElementById("foodname").value = '';
+
+}
+
 window.onload = fadeOut();
