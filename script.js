@@ -40,7 +40,8 @@ function show()
   var params = {
     "name": name,
     "email": email,
-    "number": number
+    "number": number,
+    "foodname": foodname
   }
 
   var xhttp = new XMLHttpRequest();
